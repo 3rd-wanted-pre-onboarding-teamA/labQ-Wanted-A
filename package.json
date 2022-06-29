@@ -19,6 +19,10 @@
   },
   "homepage": "https://github.com/3rd-wanted-pre-onboarding-teamA/labQ-Wanted-A#readme",
   "dependencies": {
-    "express": "^4.18.1"
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "request": "^2.88.2",
+    "require": "^2.4.20"
   }
 }
