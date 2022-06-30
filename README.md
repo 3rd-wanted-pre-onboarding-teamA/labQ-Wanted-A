@@ -21,8 +21,6 @@
 
 ![image](https://img.shields.io/badge/FRM-Express-%23000000?style=for-the-badge&logo=Express)
 
-![image](https://img.shields.io/badge/DB-MySQL-%234479A1?style=for-the-badge&logo=MySQL)
-
 ## ✍️ 서비스 개요
 
 
