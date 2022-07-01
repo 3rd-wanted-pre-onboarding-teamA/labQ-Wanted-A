@@ -24,6 +24,7 @@ router.get("/", async (req, res) => {
   dfRain = dfRain.groupBy("RECEIVE_TIME").aggregate((group) => group.stat.mean("RAINFALL10")); // 날짜로 그룹화하여 rainFall 칼럼 평균
   dfRain = dfRain.renameAll(["date", "rainFall"]); // 칼럼명 변경
   dfPipe = dfPipe.innerJoin(dfRain, "date"); // innerjoin으로 공통된 시간인 10분 단위로 값 출력
+  dfPipe = dfPipe.withColumn('localname', () => area) // localname 칼럼 추가
 
   // 결합한 데이터 출력
   console.log(dfPipe.toCollection())
