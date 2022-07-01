@@ -1,11 +1,7 @@
 const express = require("express");
-const waterlevel = require("./waterLevel");
-const rainFall = require("./rainFall");
-const result = require('./result');
+const result1 = require("./result1");
 const router = express.Router();
 
-router.use("/WaterLevel", waterlevel);
-router.use("/RainFall", rainFall);
-router.use('/result', result);
+router.use("/result1", result1);
 
 module.exports = router;
