@@ -45,14 +45,14 @@ router.get("/", async (req, res) => {
 
   // 결합한 데이터 출력
   if (statusCode[200].includes(resultCode)) {
-    let res = {
+    let result = {
       CODE: 200,
       GUBN: area,
       GUBN_NUM: code,
       RESULT: dfPipe.toCollection()
     };
-    console.log(JSON.stringify(res, undefined, 2));
-    return JSON.stringify(res);
+    console.log(JSON.stringify(result, undefined, 2));
+    return res.json(result);
   } else if (statusCode[400].includes(resultCode)) {
     // API 오류: 잘못된 API를 요청했을 때 400 반환
     return res.status(400).end();
