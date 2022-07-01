@@ -1,16 +1,15 @@
 const dotenv = require("dotenv");
 const request = require("request");
-const qs = require("querystring");
 
-dotenv.config();
+
+dotenv.config(); 
 
 const rainFall = (area) => {
   const url = "http://openapi.seoul.go.kr:8088/";
   const SERVICE_KEY = process.env.RAIN_FALL_API_KEY;
   const localName = area + "구";
   const num = 1000;
-  let requestUrl = `${url}${SERVICE_KEY}/json/ListRainfallService/1/${num}/`;
-  requestUrl += qs.escape(localName);
+  let requestUrl = encodeURI(`${url}${SERVICE_KEY}/json/ListRainfallService/1/${num}/${localName}`);
 
   return new Promise((resolve, reject) => {
     request(requestUrl, (error, response, body) => {
