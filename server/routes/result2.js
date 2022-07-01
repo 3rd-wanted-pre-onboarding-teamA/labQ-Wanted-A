@@ -4,8 +4,8 @@ const rainFallInfo = require("../../request/rainFall");
 
 const router = express.Router();
 
-router.get("/:code", async (req, res) => {
-  const code = req.params.code;
+router.get("/", async (req, res) => {
+  const code = req.query.code;
   const drainPipeArr = await drainpipeInfo(code);
   const area = drainPipeArr.row[0].GUBN_NAM;
   const rainFallArr = await rainFallInfo(area);
