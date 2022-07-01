@@ -5,15 +5,15 @@ const df = require("dataframe-js");
 
 const router = express.Router();
 
-router.get("/" , async (req, res) => {
+router.get("/", async (req, res) => {
   const code = req.query.code;
   const drainPipeArr = await drainpipeInfo(code);
   const area = drainPipeArr[0].location;
   const rainFallArr = await rainFallInfo(area);
 
-  // 하수관로 수위 현황 
+  // 하수관로 수위 현황
   for (const arr of drainPipeArr) {
-    arr.date = arr.date.slice(0, -5) // 날짜 형식 강우량과 맞추기 (년-월-일 시:분)
+    arr.date = arr.date.slice(0, -5); // 날짜 형식 강우량과 맞추기 (년-월-일 시:분)
   }
   let dfPipe = new df.DataFrame(drainPipeArr); // 데이터프레임 생성
   dfPipe = dfPipe.groupBy("date").aggregate((group) => group.stat.mean("waterLevel")); // 날짜로 그룹화하여 waterLevel 칼럼 평균
