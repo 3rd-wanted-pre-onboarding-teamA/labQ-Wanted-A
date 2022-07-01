@@ -15,7 +15,7 @@ Date.prototype.YYYYMMDDHH = function () {
 Date.prototype.YYYYMMDDHH_1hour = function () {
   var yyyy = this.getFullYear().toString();
   var MM = pad(this.getMonth() + 1, 2);
-  var dd = pad(this.getDate() - 1, 2);
+  var dd = pad(this.getDate(), 2);
   var hh = pad(this.getHours() - 1, 2);
 
   return yyyy + MM + dd + hh;
@@ -41,6 +41,7 @@ const drainpipeInfo = (code) => {
       if (!error && response.statusCode == 200) {
         resolve(JSON.parse(body).DrainpipeMonitoringInfo);
       } else {
+        console.log(error);
         reject(error);
       }
     });
