@@ -24,16 +24,16 @@ router.get("/", async (req, res) => {
   const rainFallArr = await rainFallInfo(area);
   const resultCode = drainPipeArr.RESULT.CODE;
 
-  if (drainPipeArr.RESULT.MESSAGE === "정상 처리되었습니다") {
-    let res = {
+  if (statusCode[200].includes(resultCode)) {
+    let result = {
       CODE: 200, //처리상태
       GUBN: area, // 구이름
       GUBN_NUM: code, // 구코드
       DRAINPIPE: drainPipeArr.row.slice(-10, -1), // 1000개 중 뒤에서 10개만 가져오기
       RAINFALL: rainFallArr.row.slice(-10, -1), // 1시간 정도의 데이터 가져오기
     };
-    console.log(JSON.stringify(res, undefined, 2));
-    return JSON.stringify(res);
+    console.log(JSON.stringify(result, undefined, 2));
+    return res.json(result);
   } else if (statusCode[400].includes(resultCode)) {
     // API 오류: 잘못된 API를 요청했을 때 400 반환
     return res.status(400).end();
