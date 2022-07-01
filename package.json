@@ -20,6 +20,8 @@
   "homepage": "https://github.com/3rd-wanted-pre-onboarding-teamA/labQ-Wanted-A#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "dataframe-js": "^1.4.4",
+    "date-utils": "^1.2.21",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "request": "^2.88.2",
