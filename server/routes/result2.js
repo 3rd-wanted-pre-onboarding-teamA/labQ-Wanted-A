@@ -11,14 +11,14 @@ const router = express.Router();
  * @ref 서울시 하수관로 수위 현황 openAPI: "https://data.seoul.go.kr/dataList/OA-2527/S/1/datasetView.do"
  * @ref 서울시 강우량 정보 openAPI: "http://data.seoul.go.kr/dataList/OA-1168/S/1/datasetView.do"
  *
- * @GET("/api/result2?code=06")
+ * @GET ("/api/seoul-rainfall-drainpipe-data2?cityId=01")
  * @param GUBN
  *
  * @returns json
  */
 
 router.get("/", async (req, res) => {
-  const code = req.query.code;
+  const code = req.query.cityId;
   const drainPipeArr = await drainpipeInfo(code);
   const area = drainPipeArr.row[0].GUBN_NAM;
   const rainFallArr = await rainFallInfo(area);
