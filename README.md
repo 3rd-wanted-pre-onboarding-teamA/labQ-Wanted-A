@@ -66,31 +66,209 @@
             - 클라이언트가 어떤 형식으로 받아야 할지 명확하게 알 수 없어서, 데이터를 모두 내려주는 게 맞다고 판단했다.
             - 명세가 하나도 없을 때, 데이터가 누락되는 경우 클라이언트 측에서 혼란을 느낄 수도 있다고 가정했다.
             - 위 모든 상황들을 고려했을 때, join하지 않고 병렬적으로 결합하고자 한다.
+            ```json
+            {
+              "CODE": 200,
+              "GUBN": "종로",
+              "GUBN_NUM": "01",
+              "DRAINPIPE": [
+                {
+                  "IDN": "01-0002",
+                  "GUBN": "01",
+                  "GUBN_NAM": "종로",
+                  "MEA_YMD": "2022-07-01 13:51:03.0",
+                  "MEA_WAL": 0,
+                  "SIG_STA": "통신양호"
+                },
+                {
+                  "IDN": "01-0001",
+                  "GUBN": "01",
+                  "GUBN_NAM": "종로",
+                  "MEA_YMD": "2022-07-01 13:51:03.0",
+                  "MEA_WAL": 0.17,
+                  "SIG_STA": "통신양호"
+                },
+                {
+                  "IDN": "01-0004",
+                  "GUBN": "01",
+                  "GUBN_NAM": "종로",
+                  "MEA_YMD": "2022-07-01 13:52:03.0",
+                  "MEA_WAL": 0.17,
+                  "SIG_STA": "통신양호"
+                },
+                {
+                  "IDN": "01-0003",
+                  "GUBN": "01",
+                  "GUBN_NAM": "종로",
+                  "MEA_YMD": "2022-07-01 13:52:03.0",
+                  "MEA_WAL": 0.14,
+                  "SIG_STA": "통신양호"
+                },
+                {
+                  "IDN": "01-0002",
+                  "GUBN": "01",
+                  "GUBN_NAM": "종로",
+                  "MEA_YMD": "2022-07-01 13:52:03.0",
+                  "MEA_WAL": 0,
+                  "SIG_STA": "통신양호"
+                },
+                {
+                  "IDN": "01-0001",
+                  "GUBN": "01",
+                  "GUBN_NAM": "종로",
+                  "MEA_YMD": "2022-07-01 13:52:03.0",
+                  "MEA_WAL": 0.17,
+                  "SIG_STA": "통신양호"
+                },
+                {
+                  "IDN": "01-0003",
+                  "GUBN": "01",
+                  "GUBN_NAM": "종로",
+                  "MEA_YMD": "2022-07-01 13:53:03.0",
+                  "MEA_WAL": 0.14,
+                  "SIG_STA": "통신양호"
+                },
+                {
+                  "IDN": "01-0002",
+                  "GUBN": "01",
+                  "GUBN_NAM": "종로",
+                  "MEA_YMD": "2022-07-01 13:53:03.0",
+                  "MEA_WAL": 0,
+                  "SIG_STA": "통신양호"
+                },
+                {
+                  "IDN": "01-0001",
+                  "GUBN": "01",
+                  "GUBN_NAM": "종로",
+                  "MEA_YMD": "2022-07-01 13:53:03.0",
+                  "MEA_WAL": 0.17,
+                  "SIG_STA": "통신양호"
+                }
+              ],
+              "RAINFALL": [
+                {
+                  "RAINGAUGE_CODE": 1002,
+                  "RAINGAUGE_NAME": "부암동",
+                  "GU_CODE": 110,
+                  "GU_NAME": "종로구",
+                  "RAINFALL10": "0",
+                  "RECEIVE_TIME": "2022-06-28 02:49"
+                },
+                {
+                  "RAINGAUGE_CODE": 1001,
+                  "RAINGAUGE_NAME": "종로구청",
+                  "GU_CODE": 110,
+                  "GU_NAME": "종로구",
+                  "RAINFALL10": "0",
+                  "RECEIVE_TIME": "2022-06-28 02:49"
+                },
+                {
+                  "RAINGAUGE_CODE": 1002,
+                  "RAINGAUGE_NAME": "부암동",
+                  "GU_CODE": 110,
+                  "GU_NAME": "종로구",
+                  "RAINFALL10": "0",
+                  "RECEIVE_TIME": "2022-06-28 02:39"
+                },
+                {
+                  "RAINGAUGE_CODE": 1001,
+                  "RAINGAUGE_NAME": "종로구청",
+                  "GU_CODE": 110,
+                  "GU_NAME": "종로구",
+                  "RAINFALL10": "0",
+                  "RECEIVE_TIME": "2022-06-28 02:39"
+                },
+                {
+                  "RAINGAUGE_CODE": 1001,
+                  "RAINGAUGE_NAME": "종로구청",
+                  "GU_CODE": 110,
+                  "GU_NAME": "종로구",
+                  "RAINFALL10": "0",
+                  "RECEIVE_TIME": "2022-06-28 02:29"
+                },
+                {
+                  "RAINGAUGE_CODE": 1002,
+                  "RAINGAUGE_NAME": "부암동",
+                  "GU_CODE": 110,
+                  "GU_NAME": "종로구",
+                  "RAINFALL10": "0",
+                  "RECEIVE_TIME": "2022-06-28 02:29"
+                },
+                {
+                  "RAINGAUGE_CODE": 1002,
+                  "RAINGAUGE_NAME": "부암동",
+                  "GU_CODE": 110,
+                  "GU_NAME": "종로구",
+                  "RAINFALL10": "0",
+                  "RECEIVE_TIME": "2022-06-28 02:19"
+                },
+                {
+                  "RAINGAUGE_CODE": 1001,
+                  "RAINGAUGE_NAME": "종로구청",
+                  "GU_CODE": 110,
+                  "GU_NAME": "종로구",
+                  "RAINFALL10": "0",
+                  "RECEIVE_TIME": "2022-06-28 02:19"
+                },
+                {
+                  "RAINGAUGE_CODE": 1002,
+                  "RAINGAUGE_NAME": "부암동",
+                  "GU_CODE": 110,
+                  "GU_NAME": "종로구",
+                  "RAINFALL10": "0",
+                  "RECEIVE_TIME": "2022-06-28 02:09"
+                }
+              ]
+            }
+            ```
+
         - 두 번째
             - 서울시 하수관로 수위 현황에서 한 지역 내에서 (예) 종로구) 동일한 시간대에 고유번호에 따른 다른 위치에서의 데이터가 존재하는 것을 발견했다.
             - 이를 해결하기 위한 방안으로, 평균값을 구한 후, `innerJoin`방식으로 두 테이블을 합쳐 출력할 예정이다. → Client
 
                 > 서울시 하수관로 수위 현황은 1분, 강우량 정보 데이터는 10분 주기로 업데이트 되므로 이 두 데이터를 합쳐서 출력하기 위해 10분 단위로 측정한 데이터 값을 출력하려 한다.
-                > 
 
-                ```
-                [출력 예시]
-                ===== [종로구] =====
-                시간대: 2022-06-30 09:09
-                측정수위: 0.5124
-                10분우량: 1.25
-                ===================
-                시간대: 2022-06-30 09:19
-                측정수위: 0.4124
-                10분우량: 0.25
-                ===================
-                시간대: 2022-06-30 09:29
-                측정수위: 0.124
-                10분우량: 1.5
-                .
-                .
-                .
-                ```
+            ```json
+            {
+              "CODE": 200,
+              "GUBN": "종로",
+              "GUBN_NUM": "01",
+              "RESULT": [
+                {
+                  "localname": "종로",
+                  "date": "2022-07-01 13:09",
+                  "waterLevel": "0.125",
+                  "rainFall": 0
+                },
+                {
+                  "localname": "종로",
+                  "date": "2022-07-01 13:19",
+                  "waterLevel": "0.122",
+                  "rainFall": 0
+                },
+                {
+                  "localname": "종로",
+                  "date": "2022-07-01 13:29",
+                  "waterLevel": "0.120",
+                  "rainFall": 0
+                },
+                {
+                  "localname": "종로",
+                  "date": "2022-07-01 13:39",
+                  "waterLevel": "0.120",
+                  "rainFall": 0
+                },
+                {
+                  "localname": "종로",
+                  "date": "2022-07-01 13:49",
+                  "waterLevel": "0.120",
+                  "rainFall": 0
+                }
+              ]
+            }
+            ```
+
+        
         
 - Client
     - 구분코드를 명시해서 REST API 호출하기
