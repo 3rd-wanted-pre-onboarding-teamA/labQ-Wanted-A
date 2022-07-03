@@ -10,10 +10,14 @@
 
 `💻 프로젝트 진행기간 2022.06.29 ~ 2022.07.01 18:00`
 
-### [👩‍👩‍👧‍👦 Team A Notion Page](https://www.notion.so/Team-A-b10e8134500642d08eedbc3b4ba3d29b)
+### [👩‍👩‍👧‍👦 Team A Notion Page](https://misty-lungfish-f16.notion.site/LabQ-OpenAPI-cc0e492facda4abfadabd844f843004d)
+
+## 🔗 배포링크
+[⚙️ 방법 1.](https://lab-qqq.herokuapp.com/api/seoul-rainfall-drainpipe-data1?cityId=01)
+
+[⚙️ 방법 2.](https://lab-qqq.herokuapp.com/api/seoul-rainfall-drainpipe-data2?cityId=01)
 
 ## ⚒️ 기술 스택
-
 
 ![image](https://img.shields.io/badge/LAN-JavaScript-%23F7DF1E?style=for-the-badge&logo=JavaScript)
 
@@ -23,49 +27,63 @@
 
 ## ✍️ 서비스 개요
 
-
 - 서울시 하수관로 수위 현황과 강우량 정보 데이터를 수집 및 가공하여 전달하는 REST API와 이를 요청하는 클라이언트 개발
 
-## 🔗 Open API
-
-
-- [https://data.seoul.go.kr/dataList/OA-2527/S/1/datasetView.do](https://data.seoul.go.kr/dataList/OA-2527/S/1/datasetView.do)
-- [http://data.seoul.go.kr/dataList/OA-1168/S/1/datasetView.do](http://data.seoul.go.kr/dataList/OA-1168/S/1/datasetView.do)
+<br>
+<br>
 
 ## 📑 요구사항 분석
 
+### ✔︎ 프로젝트 요구사항
+**Open API를 활용하여 공공데이터 수집 및 가공, 데이터 전달하는 REST API 개발**
 
-- REST API
-    - 서울시 하수관로 수위 현황과 강우량 정보 데이터 수집
-        - 서울시 하수관로 수위 현황
-            - [x]  측정일자
-            - [x]  구분명(지역명)
-            - [x]  측정수위
-        - 강우량 정보 데이터
-            - [x]  자료수집 시각
-            - [x]  구청명
-            - [x]  10분 우량
-    - 출력값 중 GUBN_NAM과 GU_NAME 기준으로 데이터 결합
-        
-        > **하수관로 수위 현황의 측정일자와 강우량 정보 데이터의 자료수집 시각이 일치할 때 데이터를 결합하도록 한다.**
-        > 
-        - [x]  날짜
+- Node.js를 이용하여 REST API 개발
+- 서울시 `하수관로 수위 현황`과 `강우량` 정보 json 방식으로 전달받아 데이터 결합
+    - [https://data.seoul.go.kr/dataList/OA-2527/S/1/datasetView.do](https://data.seoul.go.kr/dataList/OA-2527/S/1/datasetView.do)
+    - [http://data.seoul.go.kr/dataList/OA-1168/S/1/datasetView.do](http://data.seoul.go.kr/dataList/OA-1168/S/1/datasetView.do)
+- 결합된 데이터 출력
+
+### ✔︎ 방향성 정리
+
+> 프로젝트 요구사항을 보고 두 가지 방향을 생각했다.
+> 
+1. `방법1` 공통된 시간대의 하수관로 수위와 강우량을 동시에 확인 할 수 있게 데이터 결합하는 방법
+2. `방법2` 받아온 모든 데이터를 누락없이 제공할 수 있도록 병렬 처리 하는 방법
+
+       → 이에 따라 두 가지 방향성 모두 구현하기로 하였다.
+
+### ✔︎ 요구사항 분석
+
+- 서울시 하수관로 수위 현황과 강우량 정보 데이터 수집
+    - 서울시 하수관로 수위 현황
+        - [x]  측정일자
         - [x]  구분명(지역명)
         - [x]  측정수위
+    - 강우량 정보 데이터
+        - [x]  자료수집 시각
+        - [x]  구청명
         - [x]  10분 우량
-    - ✍️ 데이터는 `JSON`으로 전달 - **두 가지 방식으로 전달해보려 한다.**
-    
-        <aside>
-        💡 먼저 두 가지 방법 모두 동일하게, 측정 시간은 현재 시간으로 고정했다.
-        </aside>
-        <br>
-        <br>
-        
-        - 첫 번째
-            - 프로그램의 확장성을 고려했다.
-            - 클라이언트가 어떤 형식으로 받아야 할지 명확하게 알 수 없어서, 데이터를 모두 내려주는 게 맞다고 판단했다.
-            - 명세가 하나도 없을 때, 데이터가 누락되는 경우 클라이언트 측에서 혼란을 느낄 수도 있다고 가정했다.
-            - 위 모든 상황들을 고려했을 때, join하지 않고 병렬적으로 결합하고자 한다.
+- 출력값 중 GUBN_NAM과 GU_NAME 기준으로 데이터 결합
+
+    > **하수관로 수위 현황의 측정일자와 강우량 정보 데이터의 자료수집 시각이 일치할 때 데이터를 결합하도록 한다.**
+    > 
+    - [x]  날짜
+    - [x]  구분명(지역명)
+    - [x]  측정수위
+    - [x]  10분 우량
+- ✍️ 데이터는 `JSON`으로 전달 - **두 가지 방식으로 전달해보려 한다.**
+
+    <aside>
+    💡 먼저 두 가지 방법 모두 동일하게, 측정 시간은 현재 시간으로 고정했다.
+    </aside>
+    <br>
+    <br>
+
+    - 첫 번째
+        - 프로그램의 확장성을 고려했다.
+        - 클라이언트가 어떤 형식으로 받아야 할지 명확하게 알 수 없어서, 데이터를 모두 내려주는 게 맞다고 판단했다.
+        - 명세가 하나도 없을 때, 데이터가 누락되는 경우 클라이언트 측에서 혼란을 느낄 수도 있다고 가정했다.
+        - 위 모든 상황들을 고려했을 때, join하지 않고 병렬적으로 결합하고자 한다.
             ```json
             {
               "CODE": 200,
