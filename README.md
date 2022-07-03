@@ -281,3 +281,7 @@
 | --- | --- | --- |
 | GET | inner join 방식으로 결합 | https://lab-qqq.herokuapp.com/api/seoul-rainfall-drainpipe-data1?cityId=01 |
 | GET | 병렬 방식으로 출력 | https://lab-qqq.herokuapp.com/api/seoul-rainfall-drainpipe-data2?cityId=01 |
+
+## 📝 More Information
+[LabQ 기업과제](https://misty-lungfish-f16.notion.site/LabQ-OpenAPI-cc0e492facda4abfadabd844f843004d)
+
