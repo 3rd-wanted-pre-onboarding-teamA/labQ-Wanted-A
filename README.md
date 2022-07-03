@@ -99,10 +99,7 @@
 
 ## 📜 REST API
 
-
-| Method | Request | URL |
+| Method | Request | Url  |
 | --- | --- | --- |
-| GET | 서울시 하수관로 수위 현황 | http://localhost:8080/미정 |
-| GET | 강우량 정보 데이터 | http://localhost:8080/미정 |
-| GET | 출력값 중 GUBN_NAM과 GU_NAME 기준으로 데이터 결합 - 첫번째 방식 (병렬) | http://localhost:8080/미정 |
-| GET | 출력값 중 GUBN_NAM과 GU_NAME 기준으로 데이터 결합 - 두번째 방식 (innerJoin) | http://localhost:8080/미정 |
+| GET | inner join 방식으로 결합 | https://lab-qqq.herokuapp.com/api/seoul-rainfall-drainpipe-data1?cityId=01 |
+| GET | 병렬 방식으로 출력 | https://lab-qqq.herokuapp.com/api/seoul-rainfall-drainpipe-data2?cityId=01 |
