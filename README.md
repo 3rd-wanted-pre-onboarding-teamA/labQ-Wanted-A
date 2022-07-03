@@ -10,7 +10,7 @@
 
 `💻 프로젝트 진행기간 2022.06.29 ~ 2022.07.01 18:00`
 
-### [👩‍👩‍👧‍👦 Team A Notion Page](https://misty-lungfish-f16.notion.site/LabQ-OpenAPI-cc0e492facda4abfadabd844f843004d)
+### [📑 LabQ 기업과제](https://misty-lungfish-f16.notion.site/LabQ-OpenAPI-cc0e492facda4abfadabd844f843004d)
 
 ## 🔗 배포링크
 [⚙️ 방법 1.](https://lab-qqq.herokuapp.com/api/seoul-rainfall-drainpipe-data1?cityId=01)
@@ -301,5 +301,4 @@
 | GET | 병렬 방식으로 출력 | https://lab-qqq.herokuapp.com/api/seoul-rainfall-drainpipe-data2?cityId=01 |
 
 ## 📝 More Information
-[LabQ 기업과제](https://misty-lungfish-f16.notion.site/LabQ-OpenAPI-cc0e492facda4abfadabd844f843004d)
-
+[Team A Notion Page](https://www.notion.so/Team-A-7434a7bbf7ef4a8ebf2f458f44cccd2f)
