@@ -25,6 +25,8 @@
 
 ![image](https://img.shields.io/badge/FRM-Express-%23000000?style=for-the-badge&logo=Express)
 
+![image](https://img.shields.io/badge/DPL-Heroku-%23491C92?style=for-the-badge&logo=Heroku)
+
 ## ✍️ 서비스 개요
 
 - 서울시 하수관로 수위 현황과 강우량 정보 데이터를 수집 및 가공하여 전달하는 REST API와 이를 요청하는 클라이언트 개발
