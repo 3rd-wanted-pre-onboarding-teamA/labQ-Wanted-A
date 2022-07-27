@@ -1,3 +1,8 @@
+/**
+ * @code writer 이승연
+ * @description 프로젝트 초기 세팅 및 배포
+ */
+
 const express = require("express");
 const cors = require("cors");
 const path = require("path");

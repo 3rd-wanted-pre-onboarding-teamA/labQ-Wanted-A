@@ -26,7 +26,7 @@ router.get("/", async (req, res) => {
 
   if (statusCode[200].includes(resultCode)) {
     let result = {
-      CODE: 200, //처리상태
+      CODE: 200, // 처리상태
       GUBN: area, // 구이름
       GUBN_NUM: code, // 구코드
       DRAINPIPE: drainPipeArr.row.slice(-10, -1), // 1000개 중 뒤에서 10개만 가져오기
